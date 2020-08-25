@@ -23,13 +23,14 @@ export class TodosComponent implements OnInit {
     // Remove From UK
     this.todos = this.todos.filter(t => t.id !== todo.id);
     // Remove from server
-    this.todoService/this.deleteTodo(todo).subscribe();
+    this.todoService.deleteTodo(todo).subscribe();
+    return
   }
 
   addTodo(todo):Todo {
     this.todoService.addTodo(todo).subscribe(todo => {
-      this.todos.push(todo);
-    });
+      this.todos.push(todo)});
+      return 
   }
 
 }
